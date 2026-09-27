@@ -18,6 +18,7 @@ export class PNG {
     this.pointer = 8;
     this.chunksToHide = ["IHDR", "PLTE", "IDAT", "IEND",
                          "gAMA", "tRNS", "cHRM", "sRGB", "iCCP", "bKGD"];
+    this.metadataChunks = ["tEXt", "iTXt", "zTXt"];
 
   }
 
@@ -224,5 +225,23 @@ export class PNG {
   // might be useful idk
   readNextChunkBinary() {
 
+  }
+
+  removeMetadataChunks() {
+    this.pointer = 8;
+    this.chunksToRemove.length = 0;
+
+    while (this.hasNextChunk()) {
+      if (this.metadataChunks.includes(this.getChunkType(this.pointer))) {
+        console.log(`to be removed chunk type: ${this.getChunkType(this.pointer)}`);
+        this.toggleChunkToRemove(this.pointer);
+      }
+      else {
+        console.log(`not to be removed chunk type: ${this.getChunkType(this.pointer)}`);
+      }
+      this.pointer += this.getChunkSize(this.pointer);
+    }
+
+    this.removeMarkedChunks();
   }
 }

@@ -4,6 +4,7 @@ const fileInput = document.getElementById("file-input")
 const theFilePreview = document.getElementById("the-file-preview");
 const downloadButton = document.getElementById("download-button");
 const processButton = document.getElementById("process-button");
+const removeAllButton = document.getElementById("remove-all-button");
 const metaDataContainer = document.getElementsByClassName("metadata-container")[0];
 
 let theFile;
@@ -18,6 +19,7 @@ fileInput.addEventListener("change", async function() {
   downloadButton.href = theFile.fileURL;
   downloadButton.hidden = false;
   processButton.hidden = false;
+  removeAllButton.hidden = false;
   metaDataContainer.innerHTML = "";
 
   displayFields();
@@ -95,3 +97,10 @@ async function displayFields() {
     }
   }
 }
+
+removeAllButton.addEventListener("click", function () {
+  theFile.removeMetadataChunks();
+  const newFileURL = theFile.fileURL;
+  console.log(newFileURL);
+  downloadButton.href = newFileURL;
+})
