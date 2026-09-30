@@ -1,5 +1,5 @@
-import { PNG } from "./png-class.js";
-import { JPEG } from "./jpeg-class.js";
+import { PNG } from "/utils/png-class.js";
+import { JPEG } from "/utils/jpeg-class.js";
 
 export class FileFactory {
   static async createFile(file, safeMode = false) {

@@ -1,9 +1,25 @@
 {
     "name": "Metadata Auto remover",
     "description": "Stay private. Auto remove metadata from files on upload.",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "manifest_version": 3,
     "action": {
         "default_popup": "popup/popup.html"
-    }
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["./content.js"]
+        }
+    ],
+    "permissions": [
+        "storage",
+        "activeTab"
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": ["utils/*"],
+            "matches": ["<all_urls>"]
+        }
+    ]
 }
