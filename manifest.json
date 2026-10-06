@@ -1,5 +1,5 @@
 {
-    "name": "Metadata Auto remover",
+    "name": "Metadata Auto Remover",
     "description": "Stay private. Auto remove metadata from files on upload.",
     "version": "1.0.0",
     "manifest_version": 3,
