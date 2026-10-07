@@ -1,36 +1,22 @@
-This is not a complete / finished readme (nor a complete / finished project)
-1-title (and sub title)
-Metadata Auto Remover
-Stay private. Auto remove metadata from files on upload.
+# Metadata Auto Remover
 
+A Chrome extension that removes metadata from files automatically at the moment of uploading them.
 
+## How to install
 
-2-description
-A Chrome extension that removes metadata from files automatically at the moment of uploading them. See supported file types and what is being removed here
+1. Download this repo
+2. Go to <chrome://extensions/> on Google Chrome
+3. Enable `Developer mode`
+4. Click on `Load unpacked` and select the folder / directory that you downloaded earlier
 
+## Current Features
 
+- Automatic metadata removal on file upload
+- A page for manual metadata stripping & analysis
 
-3-get started / how to install
-to install you need to have google chrome installed, go to manage extensions, enable developer mode, click load unpacked, and choose the folder / directory of the project
+## Current Limitations
 
-
-
-4-current featrues
-
-
-
-
-5- supported file types and what data is being removed
-supported file types are: png images (.png) , and jpeg images (.jpg / .jpeg / .jfif)
-
-
-
-5-current limitations and potential improvements:
-
-1-  many popular extensions missing like mp4, pdf!
-2-  copy and pasting files / drag and drop don't work yet, the extension currently only listens to "change" event in "input" field
-
-
-
-
-6-contact us
+- Only supports `png` and `jpeg` files
+- Expects the files to be non-corrupt
+- Only works with `input` HTML tags. Drag & drop, copy & pasting files are not handled
+- Analysis page doesn't correctly display all metadata types. Missing essentail metadata types like `EXIF` in `jpeg` files
